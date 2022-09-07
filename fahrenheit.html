@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./bootstrap.css">
+	<style>
+		body{
+			font-family: Georgia, Sans-Serif, Arial, Tahoma;
+			background: darkblue;
+		}
+		html{
+			height: 100%;
+			width: 100%;
+		}
+	</style>
+	<title>Degree conversion</title>
+</head>
+<body>
+	<header>
+		<div class="container-fluid">
+			<div class="container mt-3">
+				<div class="row justify-content-center">
+					<div class="col-xl-6 col-lg-8">
+						<h1 class="display-5 text-center fw-bolder text-light">Degree Conversion</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="container-fluid p-5 p-lg-5">
+		<div class="container mt-1">
+			<div class="row gx-4 gx-lg-5 justify-content-center">
+				<div class="col-lg-8 col-xl-6 text-center">
+					<p class="fw-bold text-light h4">A simple tool to convert degree from celcius to fahrenheit and vice-versa</p>
+					<p class="fst-italic text-light">NB: Click the red button for celcius value</p>
+				</div>
+			</div>
+			<div class="form-floating mt-2">
+				<div class="row gx-4 gx-lg-5 justify-content-center mb-3">
+					<div class="col-xl-6 col-lg-8">
+						<label for="celcius" class="text-success h5">Celcius Value</label>
+						<input
+						class="form-control" type="number" name="celcius" id="celcius" value="">
+					</div>
+				</div>
+				<div class="row gx-4 gx-lg-5 justify-content-center">
+					<div class="col-xl-6 col-lg-8">
+						<label for="fahrenheit" class="text-danger h4">Fahrenheit Value</label>
+						<input
+						class="form-control" type="number" name="fahrenheit" id="Fahrenheit" value="">
+					</div>
+				</div>
+				<div class="row gx-4 gx-lg-5 justify-content-center mt-4">
+					<div class="col-xl-6 col-lg-8">
+						<div class="hstack">
+							<button type="submit" class="btn btn-success px-4 me-2" id="btn">Go!</button>
+							<button type="submit" class="btn btn-danger px-4 ms-2" id="btn2">Go!</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="bg-dark py-3 fixed-bottom">
+		<div class="container px-4 px-lg-5">
+		<div class="small text-center text-light">Copyright &copy; 2022 - Ayanfe Technologies
+		</div>
+		</div>
+	</footer>
+	<script type="text/javascript">
+		const btn = document.querySelector('#btn')
+		const btn2 = document.querySelector('#btn2')
+		const celcius = document.querySelector("[name='celcius']");
+		const fahrenheit = document.querySelector("[name='fahrenheit']");
+		btn.addEventListener('click', ()=> {
+			fahrenheit.value = celcius.value * (9/5) + 32;
+			});
+			btn2.addEventListener('click', ()=> {
+				celcius.value = (5/9) * (fahrenheit.value-32);
+			});
+	</script>
+</body>
+</html>
